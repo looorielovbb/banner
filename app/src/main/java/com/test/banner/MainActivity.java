@@ -29,34 +29,30 @@ import com.youth.banner.config.BannerConfig;
 import com.youth.banner.config.IndicatorConfig;
 import com.youth.banner.indicator.CircleIndicator;
 import com.youth.banner.indicator.RoundLinesIndicator;
-import com.youth.banner.listener.OnPageChangeListener;
+
 import com.youth.banner.util.BannerUtils;
 import com.youth.banner.util.LogUtils;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.banner)
     Banner banner;
-    @BindView(R.id.indicator)
     RoundLinesIndicator indicator;
-    @BindView(R.id.swipeRefresh)
     SwipeRefreshLayout refresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-
+        banner = findViewById(R.id.banner);
+        indicator = findViewById(R.id.indicator);
+        refresh = findViewById(R.id.swipeRefresh);
         //自定义的图片适配器，也可以使用默认的BannerImageAdapter
         ImageAdapter adapter = new ImageAdapter(DataBean.getTestData2());
 
+        //noinspection unchecked
         banner.setAdapter(adapter)
 //              .setCurrentItem(0,false)
                 .addBannerLifecycleObserver(this)//添加生命周期观察者
@@ -89,9 +85,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.style_image, R.id.style_image_title, R.id.style_image_title_num, R.id.style_multiple,
-            R.id.style_net_image, R.id.change_indicator, R.id.rv_banner, R.id.cl_banner, R.id.vp_banner,
-            R.id.banner_video, R.id.banner_tv, R.id.gallery, R.id.topLine})
+
     public void click(View view) {
         indicator.setVisibility(View.GONE);
         switch (view.getId()) {

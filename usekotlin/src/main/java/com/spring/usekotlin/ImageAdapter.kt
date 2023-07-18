@@ -10,7 +10,6 @@ import com.youth.banner.util.BannerUtils
 
 class ImageAdapter(imageUrls: List<String>) : BannerAdapter<String, ImageAdapter.ImageHolder>(imageUrls) {
 
-
     override fun onCreateHolder(parent: ViewGroup?, viewType: Int): ImageHolder {
         val imageView = ImageView(parent!!.context)
         val params = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
@@ -27,10 +26,8 @@ class ImageAdapter(imageUrls: List<String>) : BannerAdapter<String, ImageAdapter
                 .into(holder.imageView)
     }
 
-
     class ImageHolder(view: View) : RecyclerView.ViewHolder(view) {
         var imageView: ImageView = view as ImageView
     }
-
 }
 

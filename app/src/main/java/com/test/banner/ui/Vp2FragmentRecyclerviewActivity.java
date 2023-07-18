@@ -15,24 +15,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class Vp2FragmentRecyclerviewActivity extends AppCompatActivity {
 
-    @BindView(R.id.vp2)
     ViewPager2 viewPager2;
-    @BindView(R.id.tab_layout)
     TabLayout mTabLayout;
-    @BindView(R.id.banner)
     Banner mBanner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vp2_fragment_recyclerview);
-        ButterKnife.bind(this);
-
+        viewPager2 = findViewById(R.id.vp2);
+        mTabLayout = findViewById(R.id.tab_layout);
+        mBanner = findViewById(R.id.banner);
         viewPager2.setAdapter(new FragmentStateAdapter(this) {
             @NonNull
             @Override

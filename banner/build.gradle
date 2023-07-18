@@ -10,18 +10,17 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 30
-        versionCode 202002
-        versionName version
         consumerProguardFiles 'proguard-rules.pro'
     }
 
-    lintOptions {
-        abortOnError false
-    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    namespace 'com.youth.banner'
+    lint {
+        abortOnError false
     }
 }
 
@@ -79,17 +78,7 @@ publishing {
         }
     }
     repositories {
-        maven {
-            // 发布的位置，这里根据发布的版本区分了 SNAPSHOT 和最终版本两种情况
-            def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-            def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
-            credentials {
-                // 这里就是之前在 issues.sonatype.org 注册的账号
-                username sonatypeUsername
-                password sonatypePassword
-            }
-        }
+
     }
 }
 

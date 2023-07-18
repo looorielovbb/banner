@@ -13,20 +13,16 @@ import com.youth.banner.Banner;
 import com.youth.banner.indicator.CircleIndicator;
 import com.youth.banner.util.BannerUtils;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class TVActivity extends AppCompatActivity {
 
     private static final String TAG = "banner_log";
-    @BindView(R.id.banner)
     Banner banner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_t_v);
-        ButterKnife.bind(this);
+        banner = findViewById(R.id.banner);
         banner.setAdapter(new ImageAdapter(DataBean.getTestData()));
         banner.setIndicator(new CircleIndicator(this));
         banner.isAutoLoop(false);

@@ -8,7 +8,6 @@ import com.youth.banner.adapter.BannerImageAdapter
 import com.youth.banner.holder.BannerImageHolder
 import com.youth.banner.indicator.CircleIndicator
 import com.youth.banner.indicator.RoundLinesIndicator
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //使用默认的图片适配器
-        var banner = (bannerLayout1 as Banner<String, BannerImageAdapter<String>>)
+        val banner = findViewById<Banner<String, BannerImageAdapter<String>>>(R.id.bannerLayout1)
         banner.apply {
             addBannerLifecycleObserver(this@MainActivity)
             setIndicator(CircleIndicator(this@MainActivity))
@@ -38,7 +37,8 @@ class MainActivity : AppCompatActivity() {
 
 
         //使用自定义适配器，更多api方法自己尝试
-        var banner2 = (bannerLayout2 as Banner<String, ImageAdapter>)
+
+        val banner2 = findViewById<Banner<String, ImageAdapter>>(R.id.bannerLayout2)
         banner2.apply {
             addBannerLifecycleObserver(this@MainActivity)
             setBannerRound(20f)

@@ -14,16 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.test.banner.R;
 import com.test.banner.adapter.MyRecyclerViewAdapter;
-import com.test.banner.util.ParentRecyclerView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class BannerListFragment extends Fragment {
     private static int index;
-    @BindView(R.id.net_rv)
     RecyclerView recyclerView;
-    @BindView(R.id.text)
     TextView text;
 
     public static Fragment newInstance(int i) {
@@ -35,13 +30,14 @@ public class BannerListFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_recyclerview_banner, container, false);
-        ButterKnife.bind(this,view);
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        recyclerView = view.findViewById(R.id.net_rv);
+        text = view.findViewById(R.id.text);
         text.setText("当前页:"+index);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new MyRecyclerViewAdapter(getActivity()));

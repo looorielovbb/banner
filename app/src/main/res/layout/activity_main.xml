@@ -42,12 +42,14 @@
                 android:scrollbars="none">
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/style_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="图片" />
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/style_image_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -55,6 +57,7 @@
                     android:text="图片+标题+指示器" />
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/style_image_title_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -62,6 +65,7 @@
                     android:text="图片+标题+数字" />
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/style_multiple"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -70,6 +74,7 @@
                     android:textAllCaps="false" />
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/style_net_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -78,6 +83,7 @@
                     android:text="网络图片" />
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/change_indicator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -87,6 +93,7 @@
 
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/gallery"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -95,6 +102,7 @@
                     android:textAllCaps="false" />
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/topLine"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -103,6 +111,7 @@
                     android:textAllCaps="false" />
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/rv_banner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -111,6 +120,7 @@
                     android:textAllCaps="false" />
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/cl_banner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -119,6 +129,7 @@
                     android:textAllCaps="false" />
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/vp_banner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -127,6 +138,7 @@
                     android:textAllCaps="false" />
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/banner_video"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -135,6 +147,7 @@
                     android:textAllCaps="false" />
 
                 <Button
+                    android:onClick="click"
                     android:id="@+id/banner_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

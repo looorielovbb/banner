@@ -16,12 +16,9 @@ import com.youth.banner.Banner;
 import com.youth.banner.indicator.RectangleIndicator;
 import com.youth.banner.util.BannerUtils;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class BannerFragment extends Fragment {
 
-    @BindView(R.id.banner)
     Banner banner;
 
     public static Fragment newInstance() {
@@ -32,13 +29,13 @@ public class BannerFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.banner, container, false);
-        ButterKnife.bind(this, view);
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        banner = view.findViewById(R.id.banner);
         banner.setAdapter(new ImageNetAdapter(DataBean.getTestData3()));
         banner.setIndicator(new RectangleIndicator(getActivity()));
         banner.setIndicatorSpace((int) BannerUtils.dp2px(4));

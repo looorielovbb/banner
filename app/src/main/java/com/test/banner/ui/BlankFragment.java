@@ -1,30 +1,22 @@
 package com.test.banner.ui;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.test.banner.R;
 import com.test.banner.adapter.ImageNetAdapter;
-import com.test.banner.adapter.MyRecyclerViewAdapter;
 import com.test.banner.bean.DataBean;
-import com.test.banner.indicator.NumIndicator;
 import com.youth.banner.Banner;
-import com.youth.banner.config.IndicatorConfig;
 import com.youth.banner.indicator.CircleIndicator;
 import com.youth.banner.util.BannerUtils;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class BlankFragment extends Fragment {
 
